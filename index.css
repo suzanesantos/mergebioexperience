@@ -1,0 +1,327 @@
+/* ENTER BUTTON */
+
+
+/* Swap material model */
+
+
+h2 {
+  font-size: 1.4em;
+  text-align: center;
+  font-family: monospace;
+}
+/* Swap material model */
+
+ #nextbutton {
+  
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  bottom: 6vh;
+  left: 25vw;
+  background-color: #AD50FF;
+  border: 0.2em solid white;
+  text-align: center;
+  color: #FFF;
+  border-radius: 100px;
+}
+#nextbutton:active {
+  background-color: white;
+  color: #AD50FF;
+}
+h2 {
+  font-size: 1.3em;
+  text-align: center;
+  font-family: monospace;
+}
+
+/* Hotspot - text information container */
+body {
+align-items: center;
+background: #222;
+display: flex;
+height: 100%;
+justify-content: center;
+margin: 0;
+}
+
+html {
+height: 100%;
+}
+
+/* Hotspot 1*/
+
+.hotspot1 {
+height: 30px;
+position: relative;
+width: 30px;
+}
+
+.hotspot1 img {
+border-radius: 9999px;
+height: 100%;
+position: relative;
+width: 100%;
+z-index: 2;
+left:575%;
+top:80%;
+}
+
+@keyframes pulse {
+to {
+opacity: 0;
+transform: scale(1);
+}
+}
+
+.hotspot1::before,
+.hotspot1::after {
+animation: pulse 2s linear infinite;
+border:  #fcba03 solid 15px;
+border-radius: 9999px;
+box-sizing: border-box;
+content: ' ';
+height: 140%;
+left: 555%;
+opacity: .6;
+position: absolute;
+top: 60%;
+transform: scale(0.754);
+width: 140%;
+z-index: 1;
+}
+
+.hotspot1::after {
+animation-delay: 1s;
+}
+
+.hotspot1:hover::before,
+.hotspot1:hover::after {
+animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.hotspot1:hover::after {
+animation-delay: .5s;
+}
+
+/* Hotspot 2*/
+
+.hotspot2 {
+height: 30px;
+position: relative;
+width: 30px;
+}
+
+.hotspot2 img {
+border-radius: 9999px;
+height: 100%;
+position: relative;
+width: 100%;
+z-index: 2;
+left:1280%;
+top:30%;
+}
+
+@keyframes pulse {
+to {
+opacity: 0;
+transform: scale(1);
+}
+}
+
+.hotspot2::before,
+.hotspot2::after {
+animation: pulse 2s linear infinite;
+border: #03fc4e solid 15px;
+border-radius: 9999px;
+box-sizing: border-box;
+content: ' ';
+height: 140%;
+left: 1255%;
+opacity: .6;
+position: absolute;
+top: 10%;
+transform: scale(0.754);
+width: 140%;
+z-index: 1;
+}
+
+.hotspot2::after {
+animation-delay: 1s;
+}
+
+.hotspot2:hover::before,
+.hotspot2:hover::after {
+animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.hotspot2:hover::after {
+animation-delay: .5s;
+}
+
+/* Hotspot 3*/
+
+.hotspot3 {
+height: 30px;
+position: relative;
+width: 30px;
+}
+
+.hotspot3 img {
+border-radius: 9999px;
+height: 100%;
+position: relative;
+width: 100%;
+z-index: 2;
+left:655%;
+top:-190%;
+}
+
+@keyframes pulse {
+to {
+opacity: 0;
+transform: scale(1);
+}
+}
+
+.hotspot3::before,
+.hotspot3::after {
+animation: pulse 2s linear infinite;
+border: #fc03e8 solid 8px;
+border-radius: 9999px;
+box-sizing: border-box;
+content: ' ';
+height: 140%;
+left: 637%;
+opacity: .6;
+position: absolute;
+top: -205%;
+transform: scale(0.754);
+width: 140%;
+z-index: 1;
+}
+
+.hotspot3::after {
+animation-delay: 1s;
+}
+
+.hotspot3:hover::before,
+.hotspot3:hover::after {
+animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.hotspot3:hover::after {
+animation-delay: .5s;
+}
+
+/* Hotspot 4*/
+
+.hotspot4 {
+height: 20px;
+position: relative;
+width: 20px;
+}
+
+.hotspot4 img {
+border-radius: 9999px;
+height: 100%;
+position: relative;
+width: 100%;
+z-index: 2;
+left:425%;
+top:1300%;
+}
+
+@keyframes pulse {
+to {
+opacity: 0;
+transform: scale(1);
+}
+}
+
+.hotspot4::before,
+.hotspot4::after {
+animation: pulse 2s linear infinite;
+border: #031cfc solid 8px;
+border-radius: 9999px;
+box-sizing: border-box;
+content: ' ';
+height: 140%;
+left: 390%;
+opacity: .6;
+position: absolute;
+top: 1280%;
+transform: scale(0.714);
+width: 140%;
+z-index: 1;
+}
+
+.hotspot4::after {
+animation-delay: 1s;
+}
+
+.hotspot4:hover::before,
+.hotspot4:hover::after {
+animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.hotspot4:hover::after {
+animation-delay: .5s;
+}
+
+/* Hotspot 5*/
+
+.hotspot5 {
+height: 20px;
+position: relative;
+width: 20px;
+}
+
+.hotspot5 img {
+border-radius: 9999px;
+height: 100%;
+position: relative;
+width: 100%;
+z-index: 2;
+left:425%;
+top:1300%;
+}
+
+@keyframes pulse {
+to {
+opacity: 0;
+transform: scale(1);
+}
+}
+
+.hotspot5::before,
+.hotspot5::after {
+animation: pulse 2s linear infinite;
+border: #fcba03 solid 8px;
+border-radius: 9999px;
+box-sizing: border-box;
+content: ' ';
+height: 140%;
+left: 390%;
+opacity: .6;
+position: absolute;
+top: 1280%;
+transform: scale(0.714);
+width: 140%;
+z-index: 1;
+}
+
+.hotspot5::after {
+animation-delay: 1s;
+}
+
+.hotspot5:hover::before,
+.hotspot5:hover::after {
+animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.hotspot5:hover::after {
+animation-delay: .5s;
+}
+
+
+
