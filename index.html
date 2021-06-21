@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Merge Bio Experience</title>
+        <meta name="viewport" content="width=device-width">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="scripts/main.js" defer></script>
+    </head>
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            
+        </header>
+        <!-- Copyright (c) 2021 8th Wall, Inc. -->
+
+        <!-- Code https://codemyui.com/pure-css-pulsating-avatar-image-effect/ -->
+        <!--<div>
+          <img src="./assets/background.jpg" id="startScreen">
+        </div>-->
+
+
+        <!--- ENTER BUTTON  | Code Source 8th Wall - URL https://www.8thwall.com/playground/model-swap/master/body.html -->
+
+        <div id="nextbutton" style="display: none; z-index: 50">
+        <h2>View 3D Art</h2>
+        </div>
+
+
+        <!--Hotspot tag -->
+
+        <div class="hotspot1" id="hotspot">
+        <img src="./assets/img-green.jpeg" id="spot">
+        </div>
+
+        <div class="hotspot2" id="hotspot2">
+        <img src="./assets/img-red.jpeg" id="spot">
+        </div>
+
+        <div class="hotspot3" id="hotspot3">
+        <img src="./assets/img-blue.jpeg" id="spot">
+        </div>
+
+        <!--<div class="hotspot4" id="hotspot4">-->
+        <!--<img src="./assets/img-red.jpeg" id="spot">-->
+        <!--</div>-->
+
+        <!--<div class="hotspot5" id="hotspot5">-->
+        <!--<img src="./assets/img-yellow.jpeg" id="spot">-->
+        <!--</div>-->
+
+
+        <!-- SWAP by tapping the button & Tap on the screen to elements appear on it -->
+
+        <a-scene
+          next-button
+         
+          hotspot
+          hotspot2
+          hotspot3
+         
+          xrextras-gesture-detector
+          xrextras-almost-there
+          xrextras-loading
+          xrextras-runtime-error
+          xrextras-pause-on-hidden
+          renderer="maxCanvasWidth: 960; maxCanvasHeight: 960;"
+          xrface="
+                  cameraDirection: back;
+                  allowedDevices: any;"
+          >
+
+        <!-- Object 1 Model -->
+
+         
+
+          
+        <!-- Assets to be loaded when A-Frame initializes | Code Source 8th Wall Swap Project -->
+          
+          <a-assets>
+
+             <a-asset-item id="humanModel" src="./assets/human-hand.glb"></a-asset-item>
+             <a-asset-item id="grassModel" src="./assets/grass-hand.glb"></a-asset-item>
+             <a-asset-item id="dirtyModel" src="./assets/dirty-hand.glb"></a-asset-item>
+             <a-asset-item id="mergedScene" src="./assets/mergedscene.glb"></a-asset-item>
+             <a-asset-item id="oceanModel" src="./assets/mother-ocean.glb"></a-asset-item>
+             <a-asset-item id="greedModel" src="./assets/RedGreed.glb"></a-asset-item>
+            
+            
+             <a-asset-item id="object1" src="./assets/object1.glb" position="-0.25 7 3" rotation="45 0 0"></a-asset-item>
+             <a-asset-item id="object2" src="./assets/object2.glb"></a-asset-item>
+             <a-asset-item id="object3" src="./assets/object3.glb" position="-0.25 7 3" rotation="-90 0 0"></a-asset-item>
+          </a-assets>
+
+
+          <a-sky src="https://aframe.io/aframe/examples/boilerplate/panorama/puydesancy.jpg" rotation="0 -20 0"></a-sky>
+
+        <!-- Assets to be loaded when A-Frame initializes | Code Source 8th Wall Record Scene Audio Project -->
+
+           <a-assets>
+             <audio id="magical-music" preload="auto" class="a-sound" src="./assets/MagicalTransition.mp3" response-type="arraybuffer"></audio>
+          </a-assets>
+
+          <xrextras-capture-config></xrextras-capture-config>
+          
+         <a-camera position="0 1 3">
+            <a-entity sound="src: #magical-music; loop: true; volume: 0.3;"></a-entity>
+         </a-camera>
+
+         
+        <!-- PLACE GROUND PROJECT | Code Source 8th Wall - URL https://www.8thwall.com/8thwall/placeground-aframe/master/body.html -->
+        <!-- Asset to be loaded when you tap the screen | Place Ground Project -->
+
+         <a-assets>
+              
+              <a-asset-item id="heartModel" src="./assets/heart.glb"></a-asset-item>
+           
+          </a-assets>
+
+          <!-- Place Ground Camera Project -->
+
+          <a-camera
+            id="camera"
+            position="0 8 0"
+            raycaster="objects: .cantap"
+            cursor="
+              fuse: false;
+              rayOrigin: mouse;">
+          </a-camera>
+          <a-entity
+            light="
+              type: directional;
+              intensity: 0.8;
+              castShadow: true;
+              shadowMapHeight:2048;
+              shadowMapWidth:2048;
+              shadowCameraTop: 20;
+              shadowCameraBottom: -20;
+              shadowCameraRight: 20;
+              shadowCameraLeft: -20;
+              target: #camera"
+            xrextras-attach="target: camera; offset: 8 15 4"
+            position="1 4.3 2.5"
+            shadow>
+          </a-entity>
+
+        <!-- Place Ground Plane -->
+        <a-box
+            id="ground"
+            class="cantap"
+            scale="1000 2 1000"
+            position="0 -1 0"
+            material="shader: shadow; transparent: false; opacity: 0.4"
+            shadow>
+          </a-box>
+          
+        <!-- Assets to be loaded when A-Frame initializes | Code Source 8th Wall Hotspot Project -->
+
+
+          <a-light type="ambient" intensity="0.5"></a-light>
+          
+        <!--- SWAP MODEL with next button element | Code Source 8th Wall - URL https://www.8thwall.com/playground/model-swap/master/body.html -->
+
+        <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
+
+        <a-camera
+            id="camera"
+            position="0 8 8"
+            raycaster="objects: .cantap"
+            cursor="
+              fuse: false;
+              rayOrigin: mouse;"
+              xrextras-attach="target: model; offset: 1 15 3;">
+          
+          </a-camera>
+          
+          <a-entity
+              light="type: directional;
+                 intensity: 0.8;
+                 castShadow: true;
+                 shadowMapHeight:2048;
+                 shadowMapWidth:2048;
+                 shadowCameraTop: 10;
+                 target: #model;"
+              position="1 4.3 2.5"
+              xrextras-attach="target: model; offset: 1 15 3;"
+              shadow>
+          </a-entity>
+          
+          <a-light type="ambient" intensity="1"></a-light>
+
+          <a-entity
+            id="object2"
+         
+            class="cantap"
+            scale="60 60 60"
+            rotation="90 0 0"
+            position="0 0 -5"
+           shadow>
+          </a-entity>
+
+        <a-entity
+            id="model"
+            gltf-model="#humanModel"
+            class="cantap"
+            scale="30 30 30"
+            rotation="-90 180 0"
+            position="-0.25 -1 -1.5"
+          
+            shadow>
+          </a-entity>
+          
+          <a-entity
+            id="art"
+            gltf-model="#mergedScene"
+            class="cantap"
+            scale="6 6 6"
+            rotation="60 0 0"
+            position="0 0 -5"
+           shadow>
+          </a-entity>
+          
+          
+          
+        <a-entity
+            light="
+              type: directional;
+              intensity: 0.8;
+              castShadow: true;
+              shadowMapHeight:2048;
+              shadowMapWidth:2048;
+              shadowCameraTop: 20;
+              shadowCameraBottom: -20;
+              shadowCameraRight: 20;
+              shadowCameraLeft: -20;
+              target: #camera"
+            xrextras-attach="target: camera; offset: 8 15 4"
+            position="1 4.3 2.5"
+            shadow>
+          </a-entity>
+          
+
+          
+
+           <a-plane id="ground" position="0 0 0" rotation="-90 0 0" width="50" height="50" material="shader: shadow" shadow></a-plane>
+
+
+        <!--- Hotspot | Code Source 8th Wall - URL https://www.8thwall.com/playground/hotspot-aframe/master/body.html -->
+
+         
+        </a-scene>
+
+
+
+
+
+        
+       
+    </body>
+</html>
